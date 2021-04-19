@@ -69,10 +69,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+# bindsym $mod+Shift+j move left
+# bindsym $mod+Shift+k move down
+# bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -120,19 +120,31 @@ set $ws9 "9. Music"
 set $ws10 "10. Transition"
 set $ws11 "11. Private"
 
-# switch to workspace
-# bindsym $mod+1 workspace number $ws1
-bindsym $mod+1 exec /home/USER/.config/i3/launchWS.sh $ws1 "alacritty"
-bindsym $mod+2 exec /home/USER/.config/i3/launchWS.sh $ws2 "/usr/bin/vivaldi-stable -new-window \"file:///home/jake/github/homepage/index.html\""
-bindsym $mod+3 exec /home/USER/.config/i3/launchWS.sh $ws3 "/usr/bin/vivaldi-stable -new-window \"file:///home/jake/github/homepage/index.html\""
+# switch to workspace opening the default app
+bindsym $mod+1 exec /home/jake/.config/i3/launchWS.sh $ws1 "alacritty"
+bindsym $mod+2 exec /home/jake/.config/i3/launchWS.sh $ws2 "/usr/bin/vivaldi-stable -new-window \"file:///home/jake/github/homepage/index.html\""
+bindsym $mod+3 exec /home/jake/.config/i3/launchWS.sh $ws3 "/usr/bin/vivaldi-stable -new-window \"file:///home/jake/github/homepage/index.html\""
 bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 exec /home/USER/.config/i3/launchWS.sh $ws5 "teams"
-bindsym $mod+6 exec /home/USER/.config/i3/launchWS.sh $ws6 "/usr/bin/vivaldi-stable -new-window \"https://classroom.google.com/u/0/h\""
-bindsym $mod+7 exec /home/USER/.config/i3/launchWS.sh $ws7 "/usr/bin/vivaldi-stable -new-window \"file:///home/jake/github/homepage/index.html\""
-bindsym $mod+8 exec /home/USER/.config/i3/launchWS.sh $ws8 "discord"
-bindsym $mod+9 exec /home/USER/.config/i3/launchWS.sh $ws9 "alacritty -e cmus"
+bindsym $mod+5 exec /home/jake/.config/i3/launchWS.sh $ws5 "teams"
+bindsym $mod+6 exec /home/jake/.config/i3/launchWS.sh $ws6 "/usr/bin/vivaldi-stable -new-window \"https://classroom.google.com/u/0/h\""
+bindsym $mod+7 exec /home/jake/.config/i3/launchWS.sh $ws7 "/usr/bin/vivaldi-stable -new-window \"file:///home/jake/github/homepage/index.html\""
+bindsym $mod+8 exec /home/jake/.config/i3/launchWS.sh $ws8 "discord"
+bindsym $mod+9 exec /home/jake/.config/i3/launchWS.sh $ws9 "alacritty -e cmus"
 bindsym $mod+0 workspace number $ws10
-bindsym $mod+p exec /home/USER/.config/i3/launchWS.sh $ws11 "torbrowser-launcher"
+bindsym $mod+p exec /home/jake/.config/i3/launchWS.sh $ws11 "torbrowser-launcher"
+
+# Move to workspace without opening anything
+bindsym $mod+Control+1 workspace number $ws1
+bindsym $mod+Control+2 workspace number $ws2
+bindsym $mod+Control+3 workspace number $ws3
+bindsym $mod+Control+4 workspace number $ws4
+bindsym $mod+Control+5 workspace number $ws5
+bindsym $mod+Control+6 workspace number $ws6
+bindsym $mod+Control+7 workspace number $ws7
+bindsym $mod+Control+8 workspace number $ws8
+bindsym $mod+Control+9 workspace number $ws9
+bindsym $mod+Control+0 workspace number $ws10
+bindsym $mod+Control+p workspace number $ws11
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -187,12 +199,12 @@ bar {
         status_command i3status
 }
 
-# ==================================
-# This is all my custom config stuff
-# ==================================
+# =================================================================
+# This is all my custom config stuff that doesn't fit anywhere else
+# =================================================================
 
-# Lock on mod shift x
-bindsym $mod+shift+x exec i3lock
+# Lock on mod shift l
+bindsym $mod+Shift+l exec i3lock
 
 # Start the notification daemon
 exec --no-startup-id dunst
@@ -202,5 +214,8 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# Change Background
-exec_always feh --no-fehbg --image-bg black --bg-max $(find /home/jake/Pictures/Backgrounds -type f | shuf -n 1)
+# Start the background scripts
+exec_always ~/github/bgchange/staticbg.py ~/Pictures/Backgrounds/TiledArch.png
+bindsym $mod+Control+b exec ~/github/bgchange/bgchange.py 30 ~/Pictures/Backgrounds/
+bindsym $mod+Shift+b exec ~/github/bgchange/staticbg.py ~/Pictures/Backgrounds/TiledArch.png
+
