@@ -1,0 +1,9 @@
+set number
+syntax on
+colorscheme default 
+set wrap!
+set tabstop=4
+set autoindent
+set wildmenu
+set incsearch
+set hlsearch
