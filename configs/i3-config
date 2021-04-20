@@ -216,6 +216,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Start the background scripts
 exec_always ~/github/bgchange/staticbg.py ~/Pictures/Backgrounds/TiledArch.png
-bindsym $mod+Control+b exec ~/github/bgchange/bgchange.py 30 ~/Pictures/Backgrounds/
+bindsym $mod+Control+b exec ~/github/bgchange/bgchange.py 120 ~/Pictures/Backgrounds/
 bindsym $mod+Shift+b exec ~/github/bgchange/staticbg.py ~/Pictures/Backgrounds/TiledArch.png
 
