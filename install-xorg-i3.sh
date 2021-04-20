@@ -29,7 +29,7 @@ Finished installing xorg and i3.
 Running link script...
 "
 
-./create-links.sh
+./scripts/create-links.sh
 
 echo "
 Finished basic install script.
