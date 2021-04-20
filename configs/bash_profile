@@ -1,0 +1,11 @@
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+# If I sign in on tty1, start the x windows (which will call .xinitrc)
+
+if [[ $(tty) = "/dev/tty1" ]]; then 
+	startx
+fi

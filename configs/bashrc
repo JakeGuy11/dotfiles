@@ -1,0 +1,20 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
+# ======================
+# Some custom stuff here
+# ======================
+
+# Exports for the NNN file manager
+alias nnn="~/programs/nnn/nnn -dH"
+export NNN_PLUG='o:fzopen;m:nmount;x:_chmod +x $nnn;c:_chmod -x $nnn;p:imgview'
+export LC_COLLATE="C"
+export NNN_FIFO=/tmp/nnn.fifo
+
