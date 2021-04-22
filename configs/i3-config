@@ -219,3 +219,7 @@ exec_always ~/github/bgchange/staticbg.py ~/Pictures/Backgrounds/TiledArch.png
 bindsym $mod+Control+b exec ~/github/bgchange/bgchange.py 120 ~/Pictures/Backgrounds/
 bindsym $mod+Shift+b exec ~/github/bgchange/staticbg.py ~/Pictures/Backgrounds/TiledArch.png
 
+# pulseaudio
+bindsym $mod+Shift+j exec --no-startup-id pavucontrol;
+# Start as floating
+for_window [class="Pavucontrol"] floating enable
