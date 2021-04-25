@@ -6,6 +6,9 @@ ln -sf ~/github/dotfiles/configs/i3-config ~/.config/i3/config
 echo "Creating dunst config..."
 ln -sf ~/github/dotfiles/configs/dunstrc ~/.config/dunst/dunstrc
 
+echo "Creating CMUS config..."
+ln -sf ~/github/dotfiles/configs/cmus-config ~/.config/cmus/autosave
+
 echo "Creating vim config..."
 ln -sf ~/github/dotfiles/configs/vimrc ~/.vimrc
 
