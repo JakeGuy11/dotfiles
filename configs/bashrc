@@ -12,6 +12,13 @@ PS1='[\u@\h \W]\$ '
 # Some custom stuff here
 # ======================
 
+# Some input stuff
+export XMODIFIERS=@im=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export QT5_IM_MODULE=fcitx
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 # Exports for the NNN file manager
 alias nnn="~/programs/nnn/nnn -dH"
 export NNN_PLUG='o:fzopen;m:nmount;x:_chmod +x $nnn;c:_chmod -x $nnn;p:imgview'
