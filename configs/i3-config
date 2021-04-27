@@ -206,6 +206,9 @@ bar {
 # Lock on mod shift l
 bindsym $mod+Shift+l exec i3lock
 
+# Start FCITX (to allow jp input)
+exec --no-startup-id fcitx
+
 # Start the notification daemon
 exec --no-startup-id dunst
 
